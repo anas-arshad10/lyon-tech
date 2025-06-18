@@ -1,19 +1,31 @@
-/* Header Base Styles */
+/* ===== Base Styles ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .header {
   background-color: #101829;
   color: white;
-  padding: 20px 0;
+  padding: 15px 0;
   position: fixed;
-  width: 100%;
   top: 0;
-  z-index: 1000;
+  width: 100%;
+  z-index: 999;
 }
 
 .header .container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.header-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
 }
 
 .logo-container {
@@ -21,18 +33,25 @@
   align-items: center;
   gap: 10px;
   text-decoration: none;
+  color: white;
 }
 
-.logo-container img {
-  width: 60px;
-  height: 60px;
+.logo {
+  width: 50px;
+  height: 50px;
   object-fit: contain;
 }
 
 .logo-container h1 {
-  margin: 0;
   font-size: 16px;
-  color: white;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+/* ===== Navigation ===== */
+.menu-wrapper {
+  display: flex;
+  align-items: center;
 }
 
 .nav-links {
@@ -51,22 +70,25 @@
   color: #3498db;
 }
 
-/* Hamburger Icon Styles */
+/* ===== Hamburger ===== */
 .hamburger {
   display: none;
   flex-direction: column;
+  justify-content: center;
   gap: 5px;
   cursor: pointer;
+  margin-left: 20px;
 }
 
-.hamburger .bar {
+.hamburger span {
   width: 25px;
   height: 3px;
   background-color: white;
-  transition: 0.3s;
+  display: block;
+  border-radius: 3px;
 }
 
-/* Responsive Design */
+/* ===== Responsive Styles ===== */
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
@@ -75,26 +97,32 @@
   .nav-links {
     display: none;
     flex-direction: column;
+    background-color: #101829;
     width: 100%;
-    margin-top: 10px;
-    gap: 10px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 1rem 0;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+    z-index: 998;
   }
 
   .nav-links.open {
     display: flex;
   }
 
-  .header .container {
-    flex-direction: column;
-    align-items: flex-start;
+  .nav-links a {
+    padding: 10px 0;
+    font-size: 1.1rem;
+    text-align: center;
+    border-bottom: 1px solid #333;
+  }
+
+  .header-content {
+    flex-direction: row;
   }
 
   .logo-container {
-    justify-content: center;
-    width: 100%;
-  }
-
-  .nav-links a {
-    padding-left: 10px;
+    flex: 1;
   }
 }
