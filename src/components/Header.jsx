@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../styles/header.css';
 
 const Header = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <header className="header">
       <div className="container">
@@ -9,7 +11,14 @@ const Header = () => {
           <img src="/images/lyon-tech-logo.png" alt="Lyon Logo" className="logo" />
           <h1>Lyon Technologies</h1>
         </a>
-        <nav>
+
+        {/* Hamburger Icon */}
+        <div className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+          &#8942;
+        </div>
+
+        {/* Navigation Links */}
+        <nav className={menuOpen ? 'nav-links open' : 'nav-links'}>
           <a href="/home">Home</a>
           <a href="#about">About Us</a>
           <a href="#services">Services</a>
