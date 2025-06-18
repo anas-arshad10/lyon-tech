@@ -2,15 +2,11 @@ import React, { useState } from 'react';
 import '../styles/header.css';
 
 const Header = () => {
-  const [isMenuOpen, setMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setMenuOpen(!isMenuOpen);
-  };
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
-  const closeMenu = () => {
-    setMenuOpen(false);
-  };
+  const handleLinkClick = () => setIsMenuOpen(false);
 
   return (
     <header className="header">
@@ -20,18 +16,17 @@ const Header = () => {
           <h1>Lyon Technologies</h1>
         </a>
 
-        {/* Hamburger Icon */}
         <div className="hamburger" onClick={toggleMenu}>
-          <span className="bar"></span>
-          <span className="bar"></span>
-          <span className="bar"></span>
+          <div className="bar"></div>
+          <div className="bar"></div>
+          <div className="bar"></div>
         </div>
 
         <nav className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
-          <a href="/home" onClick={closeMenu}>Home</a>
-          <a href="#about" onClick={closeMenu}>About Us</a>
-          <a href="#services" onClick={closeMenu}>Services</a>
-          <a href="#contact" onClick={closeMenu}>Contact</a>
+          <a href="/home" onClick={handleLinkClick}>Home</a>
+          <a href="#about" onClick={handleLinkClick}>About Us</a>
+          <a href="#services" onClick={handleLinkClick}>Services</a>
+          <a href="#contact" onClick={handleLinkClick}>Contact</a>
         </nav>
       </div>
     </header>

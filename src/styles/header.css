@@ -1,3 +1,4 @@
+/* Header Base Styles */
 .header {
   background-color: #101829;
   color: white;
@@ -34,37 +35,44 @@
   color: white;
 }
 
-nav {
+.nav-links {
   display: flex;
   gap: 20px;
 }
 
-nav a {
+.nav-links a {
   color: white;
   text-decoration: none;
   font-size: 1rem;
   transition: color 0.3s;
 }
 
-nav a:hover {
+.nav-links a:hover {
   color: #3498db;
 }
 
-/* Hamburger styles (hidden by default) */
+/* Hamburger Icon Styles */
 .hamburger {
   display: none;
-  font-size: 24px;
+  flex-direction: column;
+  gap: 5px;
   cursor: pointer;
-  color: white;
 }
 
-/* Responsive */
+.hamburger .bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  transition: 0.3s;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
   .hamburger {
-    display: block;
+    display: flex;
   }
 
-  nav {
+  .nav-links {
     display: none;
     flex-direction: column;
     width: 100%;
@@ -72,7 +80,7 @@ nav a:hover {
     gap: 10px;
   }
 
-  nav.open {
+  .nav-links.open {
     display: flex;
   }
 
@@ -82,11 +90,11 @@ nav a:hover {
   }
 
   .logo-container {
+    justify-content: center;
     width: 100%;
-    justify-content: space-between;
   }
 
-  nav a {
+  .nav-links a {
     padding-left: 10px;
   }
 }
