@@ -11,27 +11,23 @@
   padding: 0 2rem;
 }
 
-/* Reversed flex order for image on left */
 .content-wrapper {
   display: flex;
   align-items: center;
   gap: 4rem;
 }
 
-/* Image container (now on left) */
 .image-content {
   flex: 1;
   text-align: center;
-  order: 1; /* Explicitly set order */
+  order: 1;
 }
 
-/* Text container (now on right) */
 .text-content {
   flex: 1;
   order: 2;
 }
 
-/* Rest of the styles remain the same */
 .solution-image {
   max-width: 80%;
   height: auto;
@@ -57,26 +53,51 @@
   color: #333;
 }
 
-/* Responsive Design (now stacks image above text) */
+/* ✅ Responsive Design */
 @media (max-width: 768px) {
   .content-wrapper {
     flex-direction: column;
     gap: 2rem;
-  }
-  
-  .image-content, 
-  .text-content {
-    order: initial; /* Reset order for mobile */
-    width: 100%;
-  }
-  
-  .text-content h2 {
-    font-size: 2rem;
     text-align: center;
   }
-  
+
+  .image-content, 
+  .text-content {
+    order: initial;
+    width: 100%;
+  }
+
+  .solution-image {
+    max-width: 90%;
+  }
+
+  .text-content h2 {
+    font-size: 2rem;
+  }
+
+  .text-content p {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
   .about-us {
     padding: 3rem 0;
     scroll-margin-top: 60px;
+  }
+}
+
+/* ✅ Extra small screens */
+@media (max-width: 480px) {
+  .text-content h2 {
+    font-size: 1.7rem;
+  }
+
+  .text-content p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .solution-image {
+    max-width: 95%;
   }
 }

@@ -13,6 +13,7 @@
   text-align: center;
   color: #2c3e50;
   margin-bottom: 10px;
+  font-size: 2.5rem;
 }
 
 .contact-subtitle {
@@ -46,6 +47,8 @@
   border-radius: 6px;
   font-size: 1rem;
   resize: vertical;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .form-group input:focus,
@@ -67,4 +70,46 @@
 
 .submit-button:hover {
   background-color: #101829;
+}
+
+/* ✅ Responsive adjustments */
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 60px 0;
+  }
+
+  .contact-section h2 {
+    font-size: 2rem;
+  }
+
+  .contact-subtitle {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  .submit-button {
+    font-size: 1rem;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-section h2 {
+    font-size: 1.75rem;
+  }
+
+  .contact-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+
+  .submit-button {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
 }

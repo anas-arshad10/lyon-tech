@@ -24,27 +24,45 @@
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 cards in a row */
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 }
 
+/* Medium screens */
 @media (max-width: 992px) {
   .services-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 in medium screen */
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .intro {
+    font-size: 1.1rem;
   }
 }
 
+/* Small screens */
 @media (max-width: 576px) {
   .services-grid {
-    grid-template-columns: 1fr; /* 1 card per row on mobile */
+    grid-template-columns: 1fr;
   }
 
   .services-section {
-    padding: 3rem 0;
+    padding: 3rem 1rem;
   }
 
   .service-card {
     padding: 1.5rem;
+  }
+
+  .card-top-image {
+    height: 180px;
+  }
+
+  .contact-banner h2 {
+    font-size: 1.8rem;
+  }
+
+  .contact-banner p {
+    font-size: 0.95rem;
   }
 }
 
@@ -64,7 +82,7 @@
 
 .card-top-image {
   width: 100%;
-  height: 150px;
+  height: 200px;
   object-fit: cover;
   border-radius: 8px 8px 0 0;
   margin-bottom: 1rem;
@@ -80,12 +98,13 @@
   line-height: 1.7;
 }
 
+/* Contact Banner Section */
 .contact-banner {
   background-color: #101829;
   padding: 4rem 2rem;
   text-align: center;
   margin-top: 3rem;
-  border-radius: 0px;
+  border-radius: 0;
 }
 
 .contact-banner h2 {
@@ -100,4 +119,15 @@
   line-height: 1.7;
   max-width: 700px;
   margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .contact-banner h2 {
+    font-size: 2rem;
+  }
+
+  .contact-banner p {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
 }
