@@ -4,6 +4,10 @@ import '../styles/header.css';
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
     <header className="header">
       <div className="container">
@@ -12,13 +16,11 @@ const Header = () => {
           <h1>Lyon Technologies</h1>
         </a>
 
-        {/* Hamburger Icon */}
-        <div className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
-          &#8942;
+        <div className="hamburger" onClick={toggleMenu}>
+          ☰
         </div>
 
-        {/* Navigation Links */}
-        <nav className={menuOpen ? 'nav-links open' : 'nav-links'}>
+        <nav className={menuOpen ? 'open' : ''}>
           <a href="/home">Home</a>
           <a href="#about">About Us</a>
           <a href="#services">Services</a>
