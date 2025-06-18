@@ -2,10 +2,14 @@ import React, { useState } from 'react';
 import '../styles/header.css';
 
 const Header = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [isMenuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
+    setMenuOpen(!isMenuOpen);
+  };
+
+  const closeMenu = () => {
+    setMenuOpen(false);
   };
 
   return (
@@ -16,15 +20,18 @@ const Header = () => {
           <h1>Lyon Technologies</h1>
         </a>
 
+        {/* Hamburger Icon */}
         <div className="hamburger" onClick={toggleMenu}>
-          ☰
+          <span className="bar"></span>
+          <span className="bar"></span>
+          <span className="bar"></span>
         </div>
 
-        <nav className={menuOpen ? 'open' : ''}>
-          <a href="/home">Home</a>
-          <a href="#about">About Us</a>
-          <a href="#services">Services</a>
-          <a href="#contact">Contact</a>
+        <nav className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
+          <a href="/home" onClick={closeMenu}>Home</a>
+          <a href="#about" onClick={closeMenu}>About Us</a>
+          <a href="#services" onClick={closeMenu}>Services</a>
+          <a href="#contact" onClick={closeMenu}>Contact</a>
         </nav>
       </div>
     </header>
