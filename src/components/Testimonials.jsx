@@ -1,5 +1,8 @@
 import React from 'react';
+import Slider from 'react-slick';
 import '../styles/testimonials.css';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 const testimonials = [
   {
@@ -20,12 +23,29 @@ const testimonials = [
 ];
 
 const Testimonials = () => {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 600,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 1
+        }
+      }
+    ]
+  };
+
   return (
     <>
       <section className="testimonials">
         <div className="container">
           <h2>Voices of Satisfied Customers</h2>
-          <div className="testimonials-grid">
+          <Slider {...settings} className="testimonial-slider">
             {testimonials.map((t, index) => (
               <div key={index} className="testimonial-card">
                 <p>"{t.quote}"</p>
@@ -35,7 +55,7 @@ const Testimonials = () => {
                 </div>
               </div>
             ))}
-          </div>
+          </Slider>
         </div>
       </section>
 

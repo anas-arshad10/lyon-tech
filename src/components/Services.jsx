@@ -1,5 +1,8 @@
 import React from 'react';
 import '../styles/services.css';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css'; 
+import 'slick-carousel/slick/slick-theme.css';
 
 const Services = () => {
   const services = [
@@ -20,31 +23,53 @@ const Services = () => {
     }
   ];
 
+  const sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+        }
+      }
+    ]
+  };
+
   return (
     <>
-    <section id="services" className="services-section">
-      <div className="container">
-        <div className="text-content">
-          <h2>Our Services</h2>
-          <p className="intro">
-            At Lyon Technologies, we offer top-tier services in the Medical Instrumentation 
-            and IT solutions industry, ensuring quality and efficiency.
-          </p>
-          
-          <div className="services-grid">
-            {services.map((service, index) => (
-              <div key={index} className="service-card">
-                <img src={service.image} alt={service.title} className="card-top-image" />
-                <h3>{service.title}</h3>
-                <p>{service.description}</p>
-              </div>
-            ))}
+      <section id="services" className="services-section">
+        <div className="container">
+          <div className="text-content">
+            <h2>Our Services</h2>
+            <p className="intro">
+              At Lyon Technologies, we offer top-tier services in the Medical Instrumentation 
+              and IT solutions industry, ensuring quality and efficiency.
+            </p>
+
+            <Slider {...sliderSettings} className="services-slider">
+              {services.map((service, index) => (
+                <div key={index} className="service-card">
+                  <img src={service.image} alt={service.title} className="card-top-image" />
+                  <h3>{service.title}</h3>
+                  <p>{service.description}</p>
+                </div>
+              ))}
+            </Slider>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-     <section className="contact-banner">
+      <section className="contact-banner">
         <div className="container">
           <h2>Reach Out to Us Today for Expert Solutions</h2>
           <p>
