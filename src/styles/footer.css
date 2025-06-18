@@ -1,29 +1,27 @@
 .footer {
-  background-color: #101829;
+  background: linear-gradient(90deg, #101829, #121212); /* Gradient similar to your image */
   color: white;
-  padding: 40px 0;
+  padding: 40px 20px;
 }
 
 .footer-content {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   flex-wrap: wrap;
-  gap: 1rem;
 }
 
 .footer-section {
-  flex: 1;
-  min-width: 250px;
-  margin-bottom: 20px;
+  flex: 1 1 250px; /* Allows flexibility in spacing */
+  margin: 10px;
 }
 
 .footer-section h3 {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   font-size: 1.5rem;
 }
 
-.footer-section p {
+.footer-section p, .footer-section ul {
   font-size: 1rem;
 }
 
@@ -39,6 +37,20 @@
 .footer-section a {
   color: #ddd;
   text-decoration: none;
+}
+
+.footer-section input {
+  padding: 10px;
+  width: 80%;
+  margin-bottom: 10px;
+}
+
+.footer-section button {
+  padding: 10px;
+  background-color: #007BFF; /* A blue button */
+  color: white;
+  border: none;
+  cursor: pointer;
 }
 
 .footer-bottom {
@@ -58,6 +70,6 @@
 
   .footer-section {
     width: 100%;
-    max-width: 400px;
+    max-width: 450px;
   }
 }
